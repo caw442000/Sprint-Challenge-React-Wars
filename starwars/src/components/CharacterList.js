@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row } from "reactstrap";
 import CharacterCard from "./CharacterCard";
 import axios from "axios";
 import uuid from "react-uuid";
@@ -14,6 +13,9 @@ const ProfileCard = styled.div`
     margin: 0 auto;
     flex-flow: row wrap;
     padding: 40px;
+    background: white;
+    opacity: 0.75;
+    
     
 
 

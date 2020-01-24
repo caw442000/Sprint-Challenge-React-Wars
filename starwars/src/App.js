@@ -5,19 +5,18 @@ import './App.css';
 
 
 const AppStyle = styled.div`
-  background-image: url('./sw-bg.jpg');
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-
   display:flex;
-  flex-direction: column;
-
-
-   
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  
 `;
 
 const App = () => {

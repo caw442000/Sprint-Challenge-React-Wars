@@ -12,6 +12,7 @@ const CardDiv = styled.div`
         background-color: black;
         color: #d7d6d1;
     }
+    border: 3px solid black;
 
 `;
 
