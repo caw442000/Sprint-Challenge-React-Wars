@@ -22,7 +22,7 @@ const ProfileCard = styled.div`
 
 
 
-function CharacterList() {
+const CharacterList = () => {
   //set to empty array as we have no data until after the useEffect axios call
   const [characters, setCharacters] = useState([]);
 
@@ -39,17 +39,16 @@ function CharacterList() {
       });
   }, []); 
   
-  console.log(characters);
   return (
-            <ProfileCard>
-            {characters.map(character => {
-                return (
+    <ProfileCard>
+        {characters.map(character => {
+            return (
                 <CharacterCard //can pass in the full data or just individual pieces data={film}
                     key={uuid()} //key is a unique item that can be passed
                     character={character}
                 />
-                );
-            })}
+            );
+        })}
 
     </ProfileCard>
   );
