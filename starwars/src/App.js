@@ -1,6 +1,24 @@
 import React from 'react';
 import CharacterList from './components/CharacterList';
+import styled from "styled-components";
 import './App.css';
+
+
+const AppStyle = styled.div`
+  background-image: url('./sw-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  display:flex;
+  flex-direction: column;
+
+
+   
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -11,10 +29,10 @@ const App = () => {
   // sync up with, if any.
 
   return (
-    <div className="App">
+    <AppStyle >
       <h1 className="Header">React Wars</h1>
       <CharacterList />
-    </div>
+    </AppStyle>
   );
 }
 

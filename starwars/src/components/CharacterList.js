@@ -1,7 +1,25 @@
 import React, { useState, useEffect } from "react";
+import { Container, Row } from "reactstrap";
 import CharacterCard from "./CharacterCard";
 import axios from "axios";
-import uuid from 'react-uuid'
+import uuid from "react-uuid";
+import styled from "styled-components";
+
+
+const ProfileCard = styled.div`
+    display:flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    padding: 40px;
+    
+
+
+
+`;
+
 
 
 function CharacterList() {
@@ -19,27 +37,21 @@ function CharacterList() {
       .catch(error => {
         console.log("the data was not returned", error);
       });
-  }, []); //useEffects require a dependency array [], empty array makes useEffect run once but you can pass state then what you pass to watch will update useEffect if no empty array it will go into infinite loop
+  }, []); 
   
   console.log(characters);
   return (
-    <div>
-      {characters.map(character => {
-        return (
-          <CharacterCard //can pass in the full data or just individual pieces data={film}
-            key={uuid()} //key is a unique item that can be passed
-            data={character}
-            
-           
-            
-            // title={film.title}
-            // description={film.description}
-            // director={film.director}
-            // release_date={film.release_date}
-          />
-        );
-      })}
-    </div>
+            <ProfileCard>
+            {characters.map(character => {
+                return (
+                <CharacterCard //can pass in the full data or just individual pieces data={film}
+                    key={uuid()} //key is a unique item that can be passed
+                    character={character}
+                />
+                );
+            })}
+
+    </ProfileCard>
   );
 } 
 export default CharacterList;
