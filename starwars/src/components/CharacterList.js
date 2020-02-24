@@ -33,7 +33,6 @@ const CharacterList = () => {
     axios
       .get("https://swapi.co/api/people")
       .then(response => {
-        console.log(response.data.results);
         setCharacters(response.data.results);
       })
       .catch(error => {
@@ -43,14 +42,14 @@ const CharacterList = () => {
   
   return (
     <ProfileCard>
-        {characters.map(character => {
-            return (
-                <CharacterCard //can pass in the full data or just individual pieces data={film}
-                    key={uuid()} //key is a unique item that can be passed
-                    character={character}
-                />
-            );
-        })}
+      {characters.map(character => {
+        return (
+          <CharacterCard //can pass in the full data or just individual pieces data={film}
+            key={uuid()} //key is a unique item that can be passed
+            character={character}
+          />
+        );
+      })}
 
     </ProfileCard>
   );
